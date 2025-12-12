@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { HashRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -79,7 +79,7 @@ const Layout: React.FC<{children: ReactNode}> = ({ children }) => {
 const App: React.FC = () => {
   return (
     <CartProvider>
-      <HashRouter>
+      <BrowserRouter>
         <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
@@ -91,7 +91,7 @@ const App: React.FC = () => {
               <Route path="/about" element={<div className="p-20 text-center">About Page Placeholder</div>} />
             </Routes>
         </Layout>
-      </HashRouter>
+      </BrowserRouter>
     </CartProvider>
   );
 };
